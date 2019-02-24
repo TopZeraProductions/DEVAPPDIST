@@ -84,7 +84,6 @@ import sys
 sys.tracebacklimit = 0
 
 def validate_freq(frequencia):
-
     try:
         float(frequencia)
     except:
@@ -105,8 +104,6 @@ def validate_notas(nota, name):
         return name + " precisa estar entre 0 e 10\n"
 
     return ""
-        #raise ValueError(name + " precisa estar entre 0 e 10")
-
 
 def aluno_aprovado(freq,
                    acs,
