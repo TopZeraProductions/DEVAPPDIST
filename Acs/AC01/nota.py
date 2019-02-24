@@ -37,8 +37,6 @@ tipo ValueError deverá ser lançada;
 11 - No caso de uma exceção ValueError ser lançada, a mensagem de erro deverá
 informar o nome do parâmetro cujas restrições foram violadas;
 
-
-
 12 - No caso de haver vários parâmetros cujas restrições foram violadas
 simultaneamente em uma mesma chamada à função, a mensagem de erro da
 exceção pode referir-se a qualquer um desses parâmetros ou mesmo a vários
@@ -86,23 +84,28 @@ import sys
 sys.tracebacklimit = 0
 
 def validate_freq(frequencia):
-    str_errors = ""
 
     try:
         float(frequencia)
     except:
-        str_errors += "Frequencia informada nao foi informada nas devidas especificacoes"
-        # raise ValueError("Frequencia informada nao foi informada nas devidas especificacoes")
+        return "Frequencia informada nao foi informada nas devidas especificacoes\n"
 
     if frequencia > 1 or frequencia < 0:
-        str_errors += "Frequencia precisa estar entre 0 e 1"
-        # raise ValueError("Frequencia precisa estar entre 0 e 1")
+        return "Frequencia precisa estar entre 0 e 1\n"
 
-    return str_errors
+    return ""
 
 def validate_notas(nota, name):
+    try:
+        float(nota)
+    except:
+        return "a nota de {0} nao foi informada nas devidas especificacoes\n".format(name)
+
     if nota > 10 or nota < 0:
-        raise ValueError(name + " precisa estar entre 0 e 10")
+        return name + " precisa estar entre 0 e 10\n"
+
+    return ""
+        #raise ValueError(name + " precisa estar entre 0 e 10")
 
 
 def aluno_aprovado(freq,
@@ -111,16 +114,23 @@ def aluno_aprovado(freq,
                    sub   = 0,
                    pai   = None,
                    extra = 0):
+    dictionary = {}
 
-    err = validate_freq(freq)
-    validate_acs(acs)
-    validate_notas(prova, "prova")
-    validate_notas(sub  , "sub")
-    validate_notas(extra, "extra")
-    print(err)
+    err  = ""
+    err += validate_freq(freq)
+    err += validate_notas(prova, "prova")
+    err += validate_notas(sub  , "sub")
+    err += validate_notas(extra, "extra")
 
     if pai != None:
-        validate_notas(pai, "pai")
+        err += validate_notas(pai, "pai")
 
+    if len(err) > 0:
+        raise ValueError("\n" + err)
 
-aluno_aprovado(0, 1, 10, 1, 10, 11)
+    dictionary["aprovado"] = True
+    dictionary["motivo"]   = []
+
+    return dictionary
+
+print(aluno_aprovado(1, 1, 10, 10, 10, 10))
