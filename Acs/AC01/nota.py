@@ -117,7 +117,7 @@ def aluno_aprovado(freq,
     validate_notas(prova, "prova")
     validate_notas(sub  , "sub")
     validate_notas(extra, "extra")
-    print err
+    print(err)
 
     if pai != None:
         validate_notas(pai, "pai")
