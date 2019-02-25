@@ -69,14 +69,14 @@ considerada como nota da prova;
 21 - A média das ACs é computada como a média das 7 maiores notas dentre as 10
 ACs;
 
-24 - Para os alunos não participantes do PAI, a nota final é considerada como 60% da
+22 - Para os alunos não participantes do PAI, a nota final é considerada como 60% da
 média das ACs mais 40% da nota da prova mais os pontos extras;
 
-25 - Para os alunos participantes do PAI, a nota final é considerada como 50% da
+23 - Para os alunos participantes do PAI, a nota final é considerada como 50% da
 média das ACs mais 30% da nota da prova mais 20% da nota do PAI mais os
 pontos extras;
 
-26 - Salvar tudo num arquivo chamado “nota.py”.
+24 - Salvar tudo num arquivo chamado “nota.py”.
 """
 
 import sys
@@ -94,6 +94,21 @@ def validate_freq(frequencia):
 
     return ""
 
+
+def validate_acs(notas):
+    if type(notas) is not list:
+        return "Notas enviadas nao foram informadas nas devidas especificacoes\n"
+
+    if len(notas) != 10:
+        return "Notas enviadas em numero inferior ao necessitado (10)\n"
+
+    err = ""
+    for index , nota in enumerate(notas):
+        err += validate_notas(nota, "AC" + str(index + 1))
+
+    return err
+
+
 def validate_notas(nota, name):
     try:
         float(nota)
@@ -105,16 +120,29 @@ def validate_notas(nota, name):
 
     return ""
 
+
+def calcular_media_acs(notas):
+    media = 0
+    for index in range(0, 7):
+        media += notas[index] * 1.0
+
+    return media / 7
+
+
 def aluno_aprovado(freq,
                    acs,
                    prova = 0,
                    sub   = 0,
                    pai   = None,
                    extra = 0):
+
     dictionary = {}
+    dictionary["aprovado"] = True
+    dictionary["motivo"]   = []
 
     err  = ""
     err += validate_freq(freq)
+    err += validate_acs(acs)
     err += validate_notas(prova, "prova")
     err += validate_notas(sub  , "sub")
     err += validate_notas(extra, "extra")
@@ -125,9 +153,28 @@ def aluno_aprovado(freq,
     if len(err) > 0:
         raise ValueError("\n" + err)
 
-    dictionary["aprovado"] = True
-    dictionary["motivo"]   = []
+    if freq < 0.75:
+        dictionary["aprovado"] = False
+        dictionary["motivo"].append("Frequencia inferior a 75%")
+
+    if sub > prova:
+        prova = sub
+
+    notas.sort(reverse = True)
+
+    media_acs = calcular_media_acs(notas)
+
+    media_final = 0
+    if (pai == None):
+        media_final = (prova * 0.4) + (media_acs * 0.6) + extra
+    else:
+        media_final = (prova * 0.3) + (media_acs * 0.5) + (pai * 0.2) + extra
+
+    if (media_final < 6):
+        dictionary["aprovado"] = False
+        dictionary["motivo"].append("Nota Final Inferior a 6")
 
     return dictionary
 
-print(aluno_aprovado(1, 1, 10, 10, 10, 10))
+notas = [6,10,4,4,4,4,4,6,10,6]
+print(aluno_aprovado(.76, notas, 1, 1, None,1))
