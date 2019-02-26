@@ -176,5 +176,5 @@ def aluno_aprovado(freq,
 
     return dictionary
 
-notas = [7,10,4,7,4,7,7,6,10, 1]
-print(aluno_aprovado(.70, notas, 1, 1, None,1))
+# notas = [7,10,4,7,4,7,7,6,10, 1]
+# print(aluno_aprovado(.70, notas, 1, 1, None,1))
