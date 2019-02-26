@@ -115,7 +115,7 @@ def validate_notas(nota, name):
     except:
         return "a nota de {0} nao foi informada nas devidas especificacoes\n".format(name)
 
-    if nota > 10 or nota < 0:
+    if float(nota) > 10 or float(nota) < 0:
         return name + " precisa estar entre 0 e 10\n"
 
     return ""
@@ -176,5 +176,5 @@ def aluno_aprovado(freq,
 
     return dictionary
 
-notas = [6,10,4,4,4,4,4,6,10,6]
-print(aluno_aprovado(.76, notas, 1, 1, None,1))
+notas = [7,10,4,7,4,7,7,6,10, 1]
+print(aluno_aprovado(.70, notas, 1, 1, None,1))
