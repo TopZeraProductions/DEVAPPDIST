@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aef8f8ac-0fd3-4c54-8906-c66e77a14101" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AC01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AC01/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brasileirao.py" beforeDir="false" afterPath="$PROJECT_DIR$/brasileirao.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/brasileirao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="46" column="61" selection-start-line="46" selection-start-column="61" selection-end-line="46" selection-end-column="61" />
+            <state relative-caret-position="105">
+              <caret line="135" column="25" lean-forward="true" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -29,6 +27,12 @@
     <findStrings>
       <find>def datas_de_jogo</find>
       <find>datas_de_jogo</find>
+      <find>classifica3</find>
+      <find>classifica</find>
+      <find>classifica1</find>
+      <find>17</find>
+      <find>classificacao_do_time_por_id</find>
+      <find>ids_dos_melhor_classificados</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -96,7 +100,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="32" y="46" width="1302" height="703" extended-state="6" />
+    <frame x="32" y="46" width="1302" height="703" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -104,8 +108,8 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32876712" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49920508" visible="true" weight="0.46232876" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.5007949" side_tool="true" weight="0.46232876" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -123,8 +127,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/brasileirao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="46" column="61" selection-start-line="46" selection-start-column="61" selection-end-line="46" selection-end-column="61" />
+        <state relative-caret-position="105">
+          <caret line="135" column="25" lean-forward="true" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
         </state>
       </provider>
     </entry>

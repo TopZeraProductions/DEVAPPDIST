@@ -1,222 +1,142 @@
 import json
-'''
-Nessa atividade, vamos usar dados do campeonato brasileiro 2018
-(brasileirao) para estudar como acessar listas, dicionarios,
-e estruturas encadeadas (listas dentro de dicionários dentro de listas)
 
-Os dados estão fornecidos em um arquivo (ano2018.json) que você 
-pode abrir no firefox, para tentar entender melhor
-
-Se quiser ver os dados dentro do python, pode chamar a funcao
-pega_dados
-
-
-'''
-
-'''
-Crie uma funcao datas_de_jogo, que procura nos dados do brasileirao 
-e devolve uma lista de todas as datas em que houve jogo.
-
-As datas devem ter o mesmo formato que tinham nos dados do brasileirao
-
-dica: busque em dados['fases']
-
-Observe que essa funcao (e todas as demais!) recebem os dados dos
-jogos numa variavel dados. Essa variavel 
-contem todas as informacoes do arquivo
-json que acompanha essa atividade 
-'''
 def datas_de_jogo(dados):
-    return dados["fases"]["2700"]["jogos"]["data"]
+    return dados["fases"]["2700"]["jogos"]["data"].keys()
 
-'''
-Crie uma funcao data_de_um_jogo, que recebe a id numérica de um jogo
-e devolve a data em que ele ocorreu. 
-
-Se essa nao é uma id valida, voce deve devolver a string 'nao encontrado'.
-Cuidado! Se você devolver uma string ligeiramente diferente, o teste
-vai falhar
-
-(você provavelmente vai querer testar sua funcao no braço e nao
-somente fazer os meus testes. Para isso, note que muitos numeros
-nesse arquivo estao representados nao como números, mas como strings)
-'''
 def data_de_um_jogo(dados,
                     id_jogo):
+    try:
+        return dados["fases"]["2700"]["jogos"]["id"][str(id_jogo)]["data"]
 
-    return dados["fases"]["2700"]["jogos"]["id"][str(id_jogo)]["data"]
+    except:
 
-
-'''
-Nos nossos dados, cada time tem um id, uma identificacao numerica.
-(voce pode consultar as identificacoes numericas em dados['equipes'])
-
-Essas id também aparecem nos jogos (onde? dê uma procurada!)
-
-A proxima função recebe a id numerica de um jogo, e devolve as
-ids numéricas dos dois times envolvidos
-
-vou deixar um codigo pra vc lembrar como retornar duas ids em
-um unico return
+        return "nao encontrado"
 
 def ids_dos_times_de_um_jogo(dados,id_jogo):
-    time1 = 12
-    time2 = 13
-    return time1,time2 #assim a gente retorna as duas respostas em um unico return
-'''
-def ids_dos_times_de_um_jogo(dados,id_jogo):
-    time1 = 12
-    time2 = 13
-    return time1,time2 #assim a gente retorna as duas respostas em um unico return
+    time1 = dados["fases"]["2700"]["jogos"]["id"][str(id_jogo)]["time1"]
+    time2 = dados["fases"]["2700"]["jogos"]["id"][str(id_jogo)]["time1"]
 
-'''
-A proxima funcao recebe a id_numerica de um time e deve retornar 
-seu 'nome-comum'
-'''
-def nome_do_time(dados,id_time):
-   pass
+    return time1, time2 #assim a gente retorna as duas respostas em um unico return
 
-'''
-A proxima funcao "cruza" as duas anteriores. Recebe uma id de um jogo
-e retorna os "nome-comum" dos dois times
-'''
-def nomes_dos_times_de_um_jogo(dados,id_jogo):
-   pass
+def nome_do_time(dados, id_time):
 
-'''
-Façamos agora a busca "ao contrário". Conhecendo
-o nome-comum de um time, queremos saber sua id.
+    return dados["equipes"][str(id_time)]["nome-comum"]
 
-Se o nome comum nao existir, retorne 'nao encontrado'
-'''
-def id_do_time(dados,nome_time):
-    pass
+def nomes_dos_times_de_um_jogo(dados, id_jogo):
 
-'''
-Agora, façamos uma busca "fuzzy". Queremos procurar por 'Fla'
-e achar o flamengo. Ou por 'Paulo' e achar o são paulo.
+    id_time1, id_time2 = ids_dos_times_de_um_jogo(dados, id_jogo)
 
-Nessa busca, você recebe um nome, e verifica os campos
-        'nome-comum', 'nome-slug', 'sigla' e 'nome',
-        tomando o cuidado de aceitar times se a string
-        buscada aparece dentro do nome (A string "Paulo"
-        aparece dentro de 'Sao Paulo')
+    nome1 = dados["equipes"][str(id_time1)]["nome-comum"]
+    nome2 = dados["equipes"][str(id_time2)]["nome-comum"]
 
-Sua resposta deve ser uma lista de ids de times que "batem"
-com a pesquisa (e pode ser vazia, se não achar ninguém)
-'''
+    return nome1, nome2
 
-def busca_imprecisa_por_nome_de_time(dados,nome_time):
-    pass
 
-#ids dos jogos de um time
+def id_do_time(dados,
+               nome_time):
 
-'''
-Agora, a idéia é receber a id de um time
-e retornar as ids de todos os jogos em que ele participou
-'''
+    for key, value in dados["equipes"].items():
+        if(value["nome-comum"] == nome_time):
+            return key
+
+    return "nao encontrado"
+
+def busca_imprecisa_por_nome_de_time(dados, nome_time):
+    results = []
+    for key, value in dados["equipes"].items():
+        if  (nome_time in value["nome-comum"]) or \
+            (nome_time in value["nome-slug"]) or \
+            (nome_time in value["sigla"]) or \
+            (nome_time in value["nome"]) :
+
+            results.append(key)
+
+    return results
+
+
 def ids_de_jogos_de_um_time(dados,time_id):
-    pass
+    results=[]
+    for key, value in dados["fases"]["2700"]["jogos"]["id"].items():
+        if (value["time1"] == time_id or value["time2"] == time_id):
+            results.append(key)
 
-'''
-Usando as ids dos jogos em que um time participou, podemos descobrir
-em que dias ele jogou.
+    return results
 
-Note que essa função recebe o nome-comum do time, nao sua id.
 
-Ela retorna uma lista das datas em que o time jogou
-'''
 def datas_de_jogos_de_um_time(dados,nome_time):
-    pass
+    ids = busca_imprecisa_por_nome_de_time(dados, nome_time)
 
+    datas = []
+    for id_jogo, jogo in dados["fases"]["2700"]["jogos"]["id"].items():
+        if (jogo["time1"] == ids[0] or jogo["time2"] == ids[0]):
+            datas.append(jogo["data"])
 
-'''
-A proxima funcao recebe apenas o dicionario dos dados do brasileirao
+    return datas
 
-Ela devolve um dicionário, com quantos gols cada time fez
-'''
 
 def dicionario_de_gols(dados):
-    pass
 
-'''
-A proxima funcao recebe apenas o dicionario dos dados do brasileirao
+    dicionario_time_gols = {}
+    for id_jogo, jogo in dados["fases"]["2700"]["jogos"]["id"].items():
 
-Ela devolve a id do time que fez mais gols no campeonato
-'''
+        dicionario_time_gols[jogo["time1"]] = dicionario_time_gols.get(jogo["time1"], 0) + int(jogo["placar1"])
+
+        dicionario_time_gols[jogo["time2"]] = dicionario_time_gols.get(jogo["time2"], 0) + int(jogo["placar2"])
+
+
+    return dicionario_time_gols
+
 def time_que_fez_mais_gols(dados):
-    pass
+    dict = dicionario_de_gols(dados)
 
+    rank = [0, 0]
+    for i, v in dict.items():
+        if int(v) > rank[1]:
+            rank[1] = int(v)
+            rank[0] = i
 
-'''
-A proxima funcao recebe apenas o dicionario dos dados do brasileirao
+    return rank[0]
 
-ela devolve um dicionário. Esse dicionário conta, para cada estádio,
-quantas vezes ocorreu um jogo nele.
-
-Ou seja, as chaves sao ids de estádios e os valores associados,
-o número de vezes que um jogo ocorreu no estádio
-'''
 def dicionario_id_estadio_e_nro_jogos(dados):
-    pass
+    dicionario_jogos_estadio = {}
+    for id_jogo, jogo in dados["fases"]["2700"]["jogos"]["id"].items():
 
-'''
-A proxima funcao recebe apenas o dicionario dos dados do brasileirao
+        dicionario_jogos_estadio[jogo["estadio_id"]] = dicionario_jogos_estadio.get(jogo["estadio_id"], 0) + 1
 
-Ela retorna o nro de times que o brasileirao qualifica para a libertadores
+    return dicionario_jogos_estadio
 
-Note. Esse numero está nos dados que eu forneci. Voce deve pegar dos
-dados. Nao basta retornar o valor correto, tem que acessar os dados
-fornecidos.
-'''
-#devolve quantos times sao classificados para a libertadores (consultando dicionario
-#de faixas)
+
 def qtos_libertadores(dados):
-    pass
+    return int(dados["fases"]["2700"]["faixas-classificacao"]["classifica1"]["faixa"].split("-")[1])
 
-'''
-A proxima funcao recebe um tamanho, e retorna uma lista
-com len(lista)=tamanho, com as ids dos times melhor classificados
-'''
-def ids_dos_melhor_classificados(dados,numero):
-    pass
+def qtos_brasileirao(dados):
+    zona = dados["fases"]["2700"]["faixas-classificacao"]["classifica3"]["faixa"].split("-")
+    z1 , z2 = zona[0], zona[1]
+    return int(z2) - int(z1)
 
-'''
-A proxima funcao usa as duas anteriores para retornar uma 
-lista de todos os times classificados para a libertadores em
-virtude do campeonato brasileiro
+def ids_dos_melhor_classificados(dados, numero):
+    melhores = []
+    for index in range(0, numero):
+        melhores.append(dados["fases"]["2700"]["classificacao"]["grupo"]["Único"][index])
 
-Lembre-se de consultar a estrutura, tanto para obter a classificacao, quanto
-para obter o nro correto de times a retornar
+    return melhores
 
-A funcao so recebe os dados do brasileirao
-
-'''
 def classificados_libertadores(dados):
-    pass
+    return ids_dos_melhor_classificados(dados, qtos_libertadores(dados))
 
-'''
-Da mesma forma que podemos obter a informacao dos times classificados
-para a libertadores, também podemos obter os times na zona de rebaixamento
-
-A proxima funcao recebe apenas o dicionário de dados do brasileirao,
-e retorna uma lista com as ids dos times rebaixados.
-
-Consulte a zona de rebaixamento do dicionário de dados, nao deixe
-ela chumbada da função
-'''
 def rebaixados(dados):
-    pass
+    rebaixados = []
+    for index in range(len(dados["fases"]["2700"]["classificacao"]["grupo"]["Único"])):
+        rebaixados.append(dados["fases"]["2700"]["classificacao"]["grupo"]["Único"][index])
 
-'''
-A proxima função recebe (alem do dicionario de dados do brasileirao) uma id de time
+    return rebaixados[len(rebaixados) - (qtos_brasileirao(dados) + 1) : len(rebaixados)]
 
-Ela retorna a classificacao desse time no campeonato.
+def classificacao_do_time_por_id(dados, time_id):
+    for index, id in enumerate(dados["fases"]["2700"]["classificacao"]["grupo"]["Único"]):
+        if id == time_id:
+            return index + 1
 
-Se a id nao for valida, ela retorna a string 'nao encontrado'
-'''
-def classificacao_do_time_por_id(dados,time_id):
-    pass
+    return "nao encontrado"
 
 
 import unittest
@@ -388,7 +308,5 @@ def pega_dados():
 dados2018 = pega_dados()
 
 if __name__ == '__main__':
-    # runTests()
-    # print(datas_de_jogo(dados2018))
-
-    print(data_de_um_jogo(dados2018, 102094))
+    runTests()
+    # print(data_de_um_jogo(dados2018, 102540))
