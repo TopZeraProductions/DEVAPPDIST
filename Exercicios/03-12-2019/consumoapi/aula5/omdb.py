@@ -39,12 +39,13 @@ def busca_por_id(film_id):
 def busca_por_texto(texto_buscar,
                     type = None,
                     page = None):
+
     url = f"http://www.omdbapi.com/?apikey={api_key}&s={texto_buscar}"
 
     if (type != None):
         url += f"&type={type}"
 
-    if (type != None):
+    if (page != None):
         url += f"&page={page}"
 
     retorno = req.get(url).json()
@@ -82,10 +83,14 @@ E os dados devem ser preenchidos baseado nos dados do site.
 '''
 def dicionario_do_filme_por_id(id_filme):
     retorno = {}
-    retorno["ano"]  = busca_por_id(id_filme)["Year"]
-    retorno["nome"] = busca_por_id(id_filme)["Title"]
-    retorno["diretor"] = busca_por_id(id_filme)["Director"]
-    retorno["genero"] = busca_por_id(id_filme)["Genre"]
+    obj = busca_por_id(id_filme)
+
+    print(obj)
+    retorno["ano"]     = obj["Year"]
+    retorno["nome"]    = obj["Title"]
+    retorno["diretor"] = obj["Director"]
+    retorno["genero"]  = obj["Genre"]
+    retorno["poster"]  = obj["Poster"]
 
     return retorno
 
@@ -104,21 +109,18 @@ def busca_filmes(texto_buscar):
     lista_fimes = busca_por_texto(texto_buscar)["Search"]
     retorno = []
 
-    di = {}
     for value in lista_fimes:
-        di["ano"]  = value["Year"]
-        di["nome"] = value["Title"]
-        retorno.append(di)
+        retorno.append({"nome": value["Title"], "ano": value["Year"]})
 
     return retorno
 
-'''
-Faça uma função busca_filmes_grande que, dada uma busca, retorna
-os VINTE primeiros filmes que batem com a busca.
-'''
+
 def busca_filmes_grande(texto_buscar):
-    resposta = []
-    return resposta
+    l1 = busca_por_texto(texto_buscar, page=1)["Search"]
+    l2 = busca_por_texto(texto_buscar, page=2)["Search"]
+    all = l1 + l2
+
+    return all
 
 '''
 Agora, considere novamente a sua função dicionario_do_filme_por_id.
@@ -142,6 +144,7 @@ em vez de uma porcentagem.
 dando a média das 3 notas (rotten tomatoes, metacritic e imdb).
 '''
 
+
 '''
 Voltemos para a busca por string.
 
@@ -162,6 +165,7 @@ receber a resposta {'movie':8,'series':2}.
 Confira, acessando a URL: 
 http://www.omdbapi.com/?s=menace&apikey={SUA-CHAVE-VEM-AQUI}
 '''
+
 def conta_tipos_de_midia_para_busca(texto_buscar):
     pass
 
@@ -374,7 +378,7 @@ class TestStringMethods(unittest.TestCase):
 
 def runTests():
     suite = unittest.defaultTestLoader.loadTestsFromTestCase(TestStringMethods)
-    unittest.TextTestRunner(verbosity = 2, failfast = True).run(suite)
+    unittest.TextTestRunner(verbosity=2, failfast=True).run(suite)
 
 if __name__ == "__main__":
     runTests()
