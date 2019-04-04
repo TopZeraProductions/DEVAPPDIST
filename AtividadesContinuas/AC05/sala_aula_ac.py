@@ -20,6 +20,30 @@ database = {
             "id": 4,
             "nome": "Ramon cavalcanti"
         },
+        {
+            "id": 5,
+            "nome": "Tiago "
+        },
+        {
+            "id": 6,
+            "nome": "Adamastor"
+        },
+        {
+            "id": 7,
+            "nome": "Felipe azevedo"
+        },
+        {
+            "id": 8,
+            "nome": "Rodrigo mota"
+        },
+        {
+            "id": 9,
+            "nome": "Rogerio senni"
+        },
+        {
+            "id": 10,
+            "nome": "Conect cut"
+        },
     ]
 }
 
@@ -86,7 +110,7 @@ def atualizar_aluno(id_aluno):
 
 if __name__ == '__main__':
     app.run(
-        port=5000,
+        port=5080,
         debug=True,
         host="localhost"
     )
