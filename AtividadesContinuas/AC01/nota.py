@@ -1,4 +1,8 @@
 # coding=utf-8
+
+import unittest
+import hashlib
+
 """
 1 - O primeiro parâmetro, chamado "freq" é obrigatório e trata-se de um número de
 ponto flutuante entre 0 e 1 que indica qual é a proporção de aulas em que o
@@ -81,7 +85,8 @@ pontos extras;
 
 import sys
 
-sys.tracebacklimit = 0
+
+# sys.tracebacklimit = 0
 
 def validate_freq(frequencia):
     try:
@@ -103,7 +108,7 @@ def validate_acs(notas):
         return "Notas enviadas em numero inferior ao necessitado (10)\n"
 
     err = ""
-    for index , nota in enumerate(notas):
+    for index, nota in enumerate(notas):
         err += validate_notas(nota, "AC" + str(index + 1))
 
     return err
@@ -131,23 +136,23 @@ def calcular_media_acs(notas):
 
 def aluno_aprovado(freq,
                    acs,
-                   prova = 0,
-                   sub   = 0,
-                   pai   = None,
-                   extra = 0):
+                   prova=0,
+                   sub=0,
+                   pai=None,
+                   extra=0):
+    dictionary = {
+        "aprovado": True,
+        "motivo": []
+    }
 
-    dictionary = {}
-    dictionary["aprovado"] = True
-    dictionary["motivo"]   = []
-
-    err  = ""
+    err = ""
     err += validate_freq(freq)
     err += validate_acs(acs)
     err += validate_notas(prova, "prova")
-    err += validate_notas(sub  , "sub")
+    err += validate_notas(sub, "sub")
     err += validate_notas(extra, "extra")
 
-    if pai != None:
+    if pai is not None:
         err += validate_notas(pai, "pai")
 
     if len(err) > 0:
@@ -155,26 +160,117 @@ def aluno_aprovado(freq,
 
     if freq < 0.75:
         dictionary["aprovado"] = False
-        dictionary["motivo"].append("Frequencia inferior a 75%")
+        dictionary["motivo"].append("faltas Frequencia inferior a 75%")
 
     if sub > prova:
         prova = sub
 
-    notas.sort(reverse = True)
+    acs.sort(reverse=True)
 
-    media_acs = calcular_media_acs(notas)
+    media_acs = calcular_media_acs(acs)
 
-    media_final = 0
-    if (pai == None):
+    if pai is None:
         media_final = (prova * 0.4) + (media_acs * 0.6) + extra
     else:
         media_final = (prova * 0.3) + (media_acs * 0.5) + (pai * 0.2) + extra
 
-    if (media_final < 6):
+    if media_final < 6:
         dictionary["aprovado"] = False
         dictionary["motivo"].append("Nota Final Inferior a 6")
 
     return dictionary
 
-# notas = [7,10,4,7,4,7,7,6,10, 1]
-# print(aluno_aprovado(.70, notas, 1, 1, None,1))
+
+notas = [7, 10, 4, 7, 4, 7, 7, 6, 10, 1]
+print(aluno_aprovado(.70, notas, 1, 1, None, 1))
+
+
+class TestStringMethods(unittest.TestCase):
+
+    def test_01_reprovado_falta(self):
+        resultado = aluno_aprovado(0.6, [8] * 10, 6, 5, None, 0)
+        self.assertFalse(resultado['aprovado'])
+        self.assertTrue('faltas' in resultado['motivo'])
+
+    def test_02_aluno_aprovado_soh_acs(self):
+        resultado = aluno_aprovado(0.9, [0] * 3 + [10] * 7, 0, 0, None, 0)
+        self.assertTrue(resultado['aprovado'])
+        resultado = aluno_aprovado(0.8, [10] * 7 + [0] * 3, 0, 0, None, 0)
+        self.assertTrue(resultado['aprovado'])
+        resultado = aluno_aprovado(0.8, [9] * 7 + [0] * 3, 0, 0, None, 0)
+        self.assertFalse(resultado['aprovado'])
+        self.assertTrue('nota' in resultado['motivo'])
+
+    def test_03_aluno_aprovado_sem_sub(self):
+        resultado = aluno_aprovado(0.9, [8] * 10, 6, 5, None, 0)
+        self.assertTrue(resultado['aprovado'])
+        resultado = aluno_aprovado(0.9, [8] * 10, 0, 0, None, 0)
+        self.assertFalse(resultado['aprovado'])
+        self.assertTrue('nota' in resultado['motivo'])
+
+    def test_04_aluno_aprovado_sub(self):
+        resultado = aluno_aprovado(0.9, [6] * 10, 0, 6, None, 0)
+        self.assertTrue(resultado['aprovado'])
+        resultado = aluno_aprovado(0.9, [6] * 10, 0, 0, None, 0)
+        self.assertFalse(resultado['aprovado'])
+        self.assertTrue('nota' in resultado['motivo'])
+
+    def test_05_aluno_aprovado_pai(self):
+        resultado = aluno_aprovado(0.75, [6] * 10, 6, 5, 6, 0)
+        self.assertTrue(resultado['aprovado'])
+        resultado = aluno_aprovado(0.75, [6] * 10, 6, 5, 0, 0)
+        self.assertFalse(resultado['aprovado'])
+        self.assertTrue('nota' in resultado['motivo'])
+
+    def test_06_aluno_aprovado_extra(self):
+        resultado = aluno_aprovado(0.75, [6] * 10, 6, 5, 5, 1)
+        self.assertTrue(resultado['aprovado'])
+        resultado = aluno_aprovado(0.75, [6] * 10, 6, 5, 5, 0)
+        self.assertFalse(resultado['aprovado'])
+        self.assertTrue('nota' in resultado['motivo'])
+
+    def test_06_falta_e_nota(self):
+        resultado = aluno_aprovado(0.2, [6] * 10, 5, 5, 6, 0)
+        self.assertFalse(resultado['aprovado'])
+        self.assertTrue('nota' in resultado['motivo'])
+        self.assertTrue('faltas' in resultado['motivo'])
+
+    def test_07_valores_padrao(self):
+        resultado = aluno_aprovado(0.2, [6] * 10, 5, 5, 6)
+        self.assertFalse(resultado['aprovado'])
+        resultado = aluno_aprovado(0.2, [6] * 10, 5, 5)
+        self.assertFalse(resultado['aprovado'])
+        resultado = aluno_aprovado(0.2, [6] * 10, 5)
+        self.assertFalse(resultado['aprovado'])
+        resultado = aluno_aprovado(0.2, [6] * 10)
+        self.assertFalse(resultado['aprovado'])
+
+    def test_08_erros(self):
+        try:
+            aluno_aprovado(75, [6] * 10, 6, 5, 5, 1)
+        except Exception:
+            pass
+        else:
+            self.fail('sua função deveria ter dado um erro')
+
+        try:
+            aluno_aprovado(0.75, [11] * 10, 6, 5, 5, 1)
+        except Exception:
+            pass
+        else:
+            self.fail('sua função deveria ter dado um erro')
+
+        try:
+            aluno_aprovado(0.75, [1] * 11, 6, 5, 5, 1)
+        except Exception:
+            pass
+        else:
+            self.fail('sua função deveria ter dado um erro')
+
+
+def run_tests():
+    suite = unittest.defaultTestLoader.loadTestsFromTestCase(TestStringMethods)
+    unittest.TextTestRunner(verbosity=2, failfast=False).run(suite)
+
+
+run_tests()
