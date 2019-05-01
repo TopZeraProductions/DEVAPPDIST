@@ -23,6 +23,17 @@ class Professor:
         d['matricula'] = self.matricula
         return d
 
+    def to_dictionary(self):
+        d = dict()
+        d['id'] = self.id
+        d['nome'] = self.nome
+        d['matricula'] = self.matricula
+        return d
+
+    @staticmethod
+    def to_tupla(tupla):
+        return Professor(id=tupla[0], nome=tupla[1], matricula=tupla[2])
+
     @staticmethod
     def cria(dados):
         try:
