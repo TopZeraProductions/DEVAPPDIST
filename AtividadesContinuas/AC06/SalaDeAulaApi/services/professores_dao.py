@@ -2,19 +2,29 @@ import sqlite3
 from model.professor import Professor
 
 
-def listar():
+def db(where=""):
     with sqlite3.connect('DATABASE') as conn:
         cursor = conn.cursor()
 
-        cursor.execute("SELECT id, nome, matricula FROM professor")
+        query = "SELECT id, nome, matricula FROM professor"
+        query += f" WHERE {where}" if where != "" else " 1=1 "
 
-        professores_db = [Professor.to_tupla(item) for item in cursor.fetchall()]
+        cursor.execute(query)
 
-        print(professores_db)
+        db = [Professor.to_tuple(item) for item in cursor.fetchall()]
 
+        print(db)
         conn.commit()
 
-    return professores_db
+        return db
+
+
+def listar():
+    return db()
+
+
+def find(id):
+    return db(f" id == {id} ")
 
 
 def novo(novo_professor):

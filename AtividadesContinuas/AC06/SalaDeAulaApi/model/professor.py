@@ -38,7 +38,7 @@ class Professor:
         return Professor(id=tupla[0], nome=tupla[1], matricula=tupla[2])
 
     @staticmethod
-    def cria(dados):
+    def create(dados):
         try:
             id = dados["id"]
             nome = dados["nome"]
@@ -55,13 +55,15 @@ class Professor:
             cursor = conn.cursor()
 
             cursor.execute(
-                "CREATE TABLE tb_professor("
-                "   id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                "   nome VARCHAR(100), "
-                "   matricula VARCHAR(100)"
-                ")"
+                "CREATE TABLE[IF NOT EXISTS] tb_professor(" +
+                "   id INTEGER PRIMARY KEY AUTOINCREMENT,"  +
+                "   nome VARCHAR(100),"                     +
+                "   matricula VARCHAR(100)"                 +
+                ") [WITHOUT ROWID];"
             )
+
             conn.commit()
 
             rows = cursor.fetchall()
             return len(rows)
+

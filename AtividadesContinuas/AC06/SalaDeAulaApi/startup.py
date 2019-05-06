@@ -1,13 +1,12 @@
 from flask import Flask, jsonify
-from controllers.alunos_api import alunos_app, alunos_db
-from controllers.professores_api import professores_app, professores_db
-from controllers.disciplinas_api import disciplinas_app, disciplinas_db
-from controllers.coordenadores_api import coordenadores_app, coordenadores_db
-from controllers.cursos_api import cursos_app, cursos_db
-from controllers.disciplinasOfertadas_api import disciplinasOfertadas_app, disciplinasOfertadas_db
-from controllers.solicitacoesMatriculas_api import solicitacoesMatriculas_app, solicitacoesMatriculas_db
-import sqlite3
 
+from api.alunos_api import alunos_app, alunos_db
+from api.professores_api import professores_app, professores_db
+from api.disciplinas_api import disciplinas_app, disciplinas_db
+from api.coordenadores_api import coordenadores_app, coordenadores_db
+from api.cursos_api import cursos_app, cursos_db
+from api.disciplinasOfertadas_api import disciplinasOfertadas_app, disciplinasOfertadas_db
+from api.solicitacoesMatriculas_api import solicitacoesMatriculas_app, solicitacoesMatriculas_db
 
 database = {
     "ALUNOS": alunos_db,
@@ -35,16 +34,13 @@ def all():
     return jsonify(database)
 
 
-'''
-if input("deseja criar o bd? S/N: ") == "S":
-    with sqlite3.connect('DATABASE') as conn:
-        cursor = conn.cursor()
+@app.route('/migrate')
+def migrate():
+    return jsonify(database)
 
-        cursor.execute("CREATE TABLE professor (id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR(100), matricula VARCHAR(100))")
-        conn.commit()
-
-        rows = cursor.fetchall()
-'''
-
-app.run(host='localhost', port=5080, debug=True)
+app.run(
+    host='localhost',
+    port=5080,
+    debug=True
+)
 
