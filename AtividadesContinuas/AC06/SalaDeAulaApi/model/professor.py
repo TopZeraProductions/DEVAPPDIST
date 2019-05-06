@@ -1,3 +1,6 @@
+import sqlite3
+
+
 class Professor:
     def __init__(self, id, nome, matricula):
         self.id = id
@@ -31,7 +34,7 @@ class Professor:
         return d
 
     @staticmethod
-    def to_tupla(tupla):
+    def to_tuple(tupla):
         return Professor(id=tupla[0], nome=tupla[1], matricula=tupla[2])
 
     @staticmethod
@@ -45,3 +48,20 @@ class Professor:
             print("Problema ao criar novo professor!")
             print(e)
             raise ValueError()
+
+    @staticmethod
+    def migrate_table():
+        with sqlite3.connect('DATABASE') as conn:
+            cursor = conn.cursor()
+
+            cursor.execute(
+                "CREATE TABLE tb_professor("
+                "   id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                "   nome VARCHAR(100), "
+                "   matricula VARCHAR(100)"
+                ")"
+            )
+            conn.commit()
+
+            rows = cursor.fetchall()
+            return len(rows)

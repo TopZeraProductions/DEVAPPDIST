@@ -27,4 +27,4 @@ def novo(novo_professor):
         )
 
         conn.commit()
-    return listar()
+        return listar()

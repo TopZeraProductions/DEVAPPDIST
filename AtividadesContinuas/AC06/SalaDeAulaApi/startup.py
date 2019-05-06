@@ -36,14 +36,14 @@ def all():
 
 
 '''
-if input("deseja criar o bd caraio? S/N: ") == "S":
+if input("deseja criar o bd? S/N: ") == "S":
     with sqlite3.connect('DATABASE') as conn:
         cursor = conn.cursor()
 
         cursor.execute("CREATE TABLE professor (id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR(100), matricula VARCHAR(100))")
+        conn.commit()
 
         rows = cursor.fetchall()
-        conn.commit()
 '''
 
 app.run(host='localhost', port=5080, debug=True)

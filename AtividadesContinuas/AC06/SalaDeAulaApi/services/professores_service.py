@@ -3,8 +3,10 @@ from infra.professores_log import ProfessorLog
 
 professores_db = []
 
+
 def listar():
     return professores_db
+
 
 def localiza(id):
     for p in professores_db:
@@ -12,12 +14,14 @@ def localiza(id):
             return p
     return None
 
+
 def novo(professor_data):
     novo_professor = localiza(professor_data["id"])
     if novo_professor != None:
         return None
     professores_db.append(Professor.cria(professor_data))
     return professores_db
+
 
 def remover(id):
     index = 0
@@ -30,6 +34,7 @@ def remover(id):
             return p
         index = index + 1
     return None
+
 
 def atualiza(id, professor_data):
     index = 0
