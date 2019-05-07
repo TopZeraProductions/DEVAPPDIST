@@ -2,6 +2,7 @@ from model.professor import Professor
 from model.aluno import Aluno
 from model.coordenador import Coordenador
 from model.curso import Curso
+from model.disciplina import Disciplina
 
 
 class Migrations:
@@ -14,6 +15,7 @@ class Migrations:
         self.migrate_aluno()
         self.migrate_coordenador()
         self.migrate_cursos()
+        self.migrate_disciplina()
 
     @staticmethod
     def migrate_professor():
@@ -34,3 +36,8 @@ class Migrations:
     def migrate_coordenador():
         print("\tmake: ", Coordenador.table_name())
         Coordenador.migrate_table()
+
+    @staticmethod
+    def migrate_disciplina():
+        print("\tmake: ", Disciplina.table_name())
+        Disciplina.migrate_table()
