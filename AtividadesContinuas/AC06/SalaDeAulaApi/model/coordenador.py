@@ -1,32 +1,48 @@
+from typing import Dict, Tuple
+import sqlite3
+
+
 class Coordenador:
-    def __init__(self, id, nome):
-        self.id = id
+    def __init__(self, id_coordenador: int = 0, nome: str = ""):
+        self.id = id_coordenador
         self.nome = nome
 
-    def atualizar(self, dados):
-        try:
-            id = dados["id"]
-            nome = dados["nome"]
-            self.id, self.nome = id, nome
-            return self
-        except Exception as e:
-            print("Problema ao criar novo coordenador!")
-            print(e)
-            raise ValueError()
-
-    def __dict__(self):
+    def to_dictionary(self) -> Dict[str, str]:
         d = dict()
         d['id'] = self.id
         d['nome'] = self.nome
         return d
 
     @staticmethod
-    def cria(dados):
+    def to_tuple(tupla: Tuple[int, str]):
+        return Coordenador(id_coordenador=tupla[0], nome=tupla[1])
+
+    @staticmethod
+    def create(dados: Dict[str, str]) -> object:
         try:
             id = dados["id"]
             nome = dados["nome"]
-            return Coordenador(id=id, nome=nome)
+            return Coordenador(id_coordenador=int(id), nome=nome)
         except Exception as e:
-            print("Problema ao criar novo coordenador!")
-            print(e)
+            print("Problema ao criar novo coordenador! " + e)
             raise ValueError()
+
+    @staticmethod
+    def table_name() -> str:
+        return "tb_coordenador"
+
+    @staticmethod
+    def migrate_table() -> int:
+        with sqlite3.connect('DATABASE') as conn:
+            cursor = conn.cursor()
+            cursor.execute(
+                f"CREATE TABLE IF NOT EXISTS {Coordenador.table_name()} (" +
+                "   id INTEGER PRIMARY KEY AUTOINCREMENT,"                 +
+                "   nome VARCHAR(100)"                                     +
+                ");"
+            )
+            conn.commit()
+
+            rows = cursor.fetchall()
+
+        return len(rows)

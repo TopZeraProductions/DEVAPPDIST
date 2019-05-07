@@ -1,6 +1,18 @@
+import sqlite3
+from typing import Dict, Tuple
+
+
 class Disciplina:
-    def __init__(self, id, nome, data, status, plano_ensino, carga_horaria, id_coordenador):
-        self.id = id
+    def __init__(self,
+                 id_disciplina:  int = 0,
+                 nome:           str = "",
+                 data:           str = "",
+                 status:         str = "",
+                 plano_ensino:   str = "",
+                 carga_horaria:  str = "",
+                 id_coordenador: int = 0):
+
+        self.id = id_disciplina
         self.nome = nome
         self.data = data
         self.status = status
@@ -8,47 +20,42 @@ class Disciplina:
         self.carga_horaria = carga_horaria
         self.id_coordenador = id_coordenador
 
-    def atualizar(self, dados):
-        try:
-            id = dados["id"]
-            nome = dados["nome"]
-            data = dados["data"]
-            status = dados["status"]
-            plano_ensino = dados["plano_ensino"]
-            carga_horaria = dados["carga_horaria"]
-            id_coordenador = dados["id_coordenador"]
-            self.id, self.nome, self.data, self.status, \
-            self.plano_ensino, self.carga_horaria, self.id_coordenador \
-            = id, nome, data, status, plano_ensino, carga_horaria, id_coordenador
-            return self
-        except Exception as e:
-            print("Problema ao criar novo professor!")
-            print(e)
-            raise ValueError()
-
-    def __dict__(self):
+    def to_dictionary(self) -> Dict[str, str]:
         d = dict()
         d['id'] = self.id
         d['nome'] = self.nome
-        d["data"] = self.data
-        d["status"] = self.status
-        d["plano_ensino"] = self.plano_ensino
-        d["carga_horaria"] = self.carga_horaria
-        d["id_coordenador"] = self.id_coordenador
         return d
 
     @staticmethod
-    def cria(dados):
+    def to_tuple(tupla: Tuple[int, str]):
+        return Curso(id_curso=tupla[0], nome=tupla[1])
+
+    @staticmethod
+    def create(dados: Dict[str, str]) -> object:
         try:
             id = dados["id"]
             nome = dados["nome"]
-            data = dados["data"]
-            status = dados["status"]
-            plano_ensino = dados["plano_ensino"]
-            carga_horaria = dados["carga_horaria"]
-            id_coordenador = dados["id_coordenador"]
-            return Disciplina(id=id, nome=nome, data=data, status=status, plano_ensino=plano_ensino, carga_horaria=carga_horaria, id_coordenador=id_coordenador)
+            return Curso(id_curso=int(id), nome=nome)
         except Exception as e:
-            print("Problema ao criar novo professor!")
-            print(e)
+            print("Problema ao criar novo Curso! " + e)
             raise ValueError()
+
+    @staticmethod
+    def table_name() -> str:
+        return "tb_curso"
+
+    @staticmethod
+    def migrate_table() -> int:
+        with sqlite3.connect('DATABASE') as conn:
+            cursor = conn.cursor()
+            cursor.execute(
+                f"CREATE TABLE IF NOT EXISTS {Curso.table_name()} (" +
+                "   id INTEGER PRIMARY KEY AUTOINCREMENT,"                 +
+                "   nome VARCHAR(100)"                                     +
+                ");"
+            )
+            conn.commit()
+
+            rows = cursor.fetchall()
+
+        return len(rows)
