@@ -1,21 +1,16 @@
 from flask import Flask, jsonify
 
-from api.alunos_api import alunos_app
-from api.disciplinas_api import disciplinas_app, disciplinas_db
-from api.coordenadores_api import coordenadores_app
-from api.cursos_api import cursos_app, cursos_db
-from api.disciplinasOfertadas_api import disciplinasOfertadas_app, disciplinasOfertadas_db
-from api.solicitacoesMatriculas_api import solicitacoesMatriculas_app, solicitacoesMatriculas_db
-from api.professores_api import professores_app
+from APP.alunos_api import alunos_app
+from APP.disciplinas_api import disciplinas_app
+from APP.coordenadores_api import coordenadores_app
+from APP.cursos_api import cursos_app
+from APP.disciplinasOfertadas_api import disciplinasOfertadas_app
+from APP.solicitacoesMatriculas_api import solicitacoesMatriculas_app
+from APP.professores_api import professores_app
 
-from migrates import Migrations
+from DAL.migrates import Migrations
 
-database = {
-    "CURSOS": cursos_db,
-    "DISCIPLINAS_OFERTADAS": disciplinasOfertadas_db,
-    "DISCIPLINAS": disciplinas_db,
-    "SOLICITACOES_MATRICULAS": solicitacoesMatriculas_db,
-}
+database = {}
 
 app = Flask(__name__)
 
