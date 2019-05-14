@@ -1,14 +1,16 @@
 from flask import Flask, jsonify
 
-from APP.alunos_api import alunos_app
-from APP.disciplinas_api import disciplinas_app
-from APP.coordenadores_api import coordenadores_app
-from APP.cursos_api import cursos_app
-from APP.disciplinasOfertadas_api import disciplinasOfertadas_app
-from APP.solicitacoesMatriculas_api import solicitacoesMatriculas_app
-from APP.professores_api import professores_app
+from App.alunos_api import alunos_app
+from App.disciplinas_api import disciplinas_app
+from App.coordenadores_api import coordenadores_app
+from App.cursos_api import cursos_app
+from App.disciplinasOfertadas_api import disciplinasOfertadas_app
+from App.solicitacoesMatriculas_api import solicitacoesMatriculas_app
+from App.professores_api import professores_app
+from App.usuario_api import usuarios_app
+from App.mensagem_api import mensagens_app
 
-from DAL.migrates import Migrations
+from Models.migrates import Migrations
 
 database = {}
 
@@ -21,6 +23,8 @@ app.register_blueprint(cursos_app)
 app.register_blueprint(disciplinasOfertadas_app)
 app.register_blueprint(disciplinas_app)
 app.register_blueprint(solicitacoesMatriculas_app)
+app.register_blueprint(usuarios_app)
+app.register_blueprint(mensagens_app)
 
 
 @app.route('/')
