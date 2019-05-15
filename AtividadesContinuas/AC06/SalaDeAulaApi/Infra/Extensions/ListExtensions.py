@@ -1,12 +1,13 @@
-from typing import Any
-
-
 class MyList(list):
+    def __init__(self, lista: list = list()):
+        super().__init__()
+        self.extend(lista)
+
     def foreach(self, expr) -> None:
         for index, element in enumerate(self):
             expr(element)
 
-    def map(self, expr) -> Any:
+    def map(self, expr):
         what = MyList()
         for index, element in enumerate(self):
             what.append(expr(element))
@@ -28,8 +29,6 @@ class MyList(list):
 
         return list
 
-
-var = MyList[str]
 
 lista_teste = MyList()
 lista_teste.append({"Nome": "Joao", "idade": 80})

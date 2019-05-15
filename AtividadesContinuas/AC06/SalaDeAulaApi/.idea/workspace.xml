@@ -2,95 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0a30fc7-5beb-49aa-ac76-68070aa7b084" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/App/mensagem_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra/Extensions/ListExtensions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra/Extensions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/mensagem/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/mensagem/dataAccess/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/mensagem/dataAccess/mensagem_dao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/mensagem/entities/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/mensagem/entities/mensagem.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/mensagem/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/mensagem/services/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/mensagem/services/mensagen_services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/alunos_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/coordenadores_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/cursos_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/disciplinasOfertadas_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/disciplinas_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/professores_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/solicitacoesMatriculas_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/alunos/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/alunos/services/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/alunos/services/alunos_services.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/coordenador/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/coordenador/services/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/coordenador/services/coordenador_services.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/curso/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/curso/services/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/curso/services/curso_services.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/disciplina/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/disciplina/services/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/disciplina/services/disciplina_services.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/disciplinasOfertadas/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/disciplinasOfertadas/services/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/disciplinasOfertadas/services/disciplinaOfertada_services.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/professor/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/professor/services/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/professor/services/professor_services.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/solicitacaoMatricula/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/solicitacaoMatricula/services/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLL/solicitacaoMatricula/services/solicitacaoMatricula_services.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/aluno/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/aluno/dataAccess/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/aluno/dataAccess/alunos_dao.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/aluno/entities/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/aluno/entities/aluno.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/coordenador/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/coordenador/dataAccess/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/coordenador/dataAccess/coordenadores_dao.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/coordenador/entities/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/coordenador/entities/coordenador.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/curso/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/curso/dataAccess/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/curso/dataAccess/cursos_dao.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/curso/entities/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/curso/entities/curso.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/disciplina/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/disciplina/dataAccess/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/disciplina/dataAccess/disciplinas_dao.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/disciplina/entities/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/disciplina/entities/disciplina.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/disciplinaOfertada/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/disciplinaOfertada/dataAccess/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/disciplinaOfertada/dataAccess/disciplinas_ofertadas_dao.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/disciplinaOfertada/entities/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/disciplinaOfertada/entities/disciplinaOfertada.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/migrates.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/professor/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/professor/dataAccess/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/professor/dataAccess/professores_dao.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/professor/entities/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/professor/entities/professor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/solicitacaoMatricula/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/solicitacaoMatricula/dataAccess/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/solicitacaoMatricula/dataAccess/solicitacoesMatriculas_dao.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/solicitacaoMatricula/entities/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/solicitacaoMatricula/entities/solicitacaoMatricula.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/mensagem_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/mensagem_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DATABASE" beforeDir="false" afterPath="$PROJECT_DIR$/DATABASE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INFRA/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/INFRA/alunos_log.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/INFRA/coordenadores_log.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/INFRA/cursos_log.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/INFRA/disciplinasOfertadas_log.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/INFRA/disciplinas_log.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/INFRA/professores_log.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/INFRA/solicitacoesMatriculas_log.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/startup.py" beforeDir="false" afterPath="$PROJECT_DIR$/startup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infra/Extensions/ListExtensions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Infra/Extensions/ListExtensions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,10 +29,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/usuario/dataAccess/usuario_dao.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/usuario_api.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="45" column="16" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Models/mensagem/dataAccess/mensagem_dao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="225">
+              <caret line="42" column="60" lean-forward="true" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="69" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -129,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Services/mensagem/services/mensagen_services.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
+            <state relative-caret-position="209">
+              <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -141,10 +76,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/mensagem_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+            <state relative-caret-position="320">
+              <caret line="40" column="33" lean-forward="true" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
               <folding>
-                <element signature="e#0#45#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/mensagem/entities/mensagem.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,20 +100,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Infra/Extensions/ListExtensions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/startup.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="192">
+              <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -174,7 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/disciplinasOfertadas_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="176">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -185,7 +121,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Models/disciplinaOfertada/entities/disciplinaOfertada.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1376">
+            <state relative-caret-position="320">
               <caret line="87" selection-start-line="87" selection-end-line="87" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
@@ -197,22 +133,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Services/usuario/services/usuarios_services.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+            <state relative-caret-position="145">
+              <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="42" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Models/usuario/entities/usuario.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -451,12 +375,12 @@
       <workItem from="1557156582653" duration="54351000" />
       <workItem from="1557760887161" duration="2792000" />
       <workItem from="1557785368332" duration="4556000" />
-      <workItem from="1557848274621" duration="4782000" />
+      <workItem from="1557848274621" duration="11752000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74684000" />
+    <option name="totallyTimeSpent" value="81654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="17" y="38" width="1330" height="693" extended-state="0" />
@@ -574,16 +498,6 @@
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/mensagem/entities/mensagem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Services/mensagem/services/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -593,33 +507,6 @@
           <caret line="69" selection-start-line="69" selection-end-line="69" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/usuario/dataAccess/usuario_dao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/usuario_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Services/mensagem/services/mensagen_services.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -634,51 +521,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/disciplinasOfertadas_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/disciplinaOfertada/entities/disciplinaOfertada.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1376">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Services/usuario/services/usuarios_services.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Models/usuario/entities/usuario.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/mensagem/dataAccess/mensagem_dao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -690,19 +538,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Models/usuario/dataAccess/usuario_dao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Services/usuario/services/usuarios_services.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/disciplinaOfertada/entities/disciplinaOfertada.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/disciplinasOfertadas_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Services/mensagem/services/mensagen_services.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/mensagem/dataAccess/mensagem_dao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="42" column="60" lean-forward="true" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/usuario_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="45" column="16" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/mensagem/entities/mensagem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Infra/Extensions/ListExtensions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        <state relative-caret-position="192">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/mensagem_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+        <state relative-caret-position="320">
+          <caret line="40" column="33" lean-forward="true" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
