@@ -43,7 +43,7 @@ Mig.migrate_all()
 
 app.run(
     host='localhost',
-    port=3000,
+    port=5080,
     debug=True
 )
 

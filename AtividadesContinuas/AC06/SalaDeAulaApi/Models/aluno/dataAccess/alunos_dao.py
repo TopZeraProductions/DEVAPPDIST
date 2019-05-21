@@ -21,7 +21,6 @@ class AlunoDAO:
 
         return data
 
-
     @staticmethod
     def list_all() -> List[Aluno]:
         return AlunoDAO.db()
