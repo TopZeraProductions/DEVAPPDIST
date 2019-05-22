@@ -14,9 +14,7 @@ def get_ceps():
 @cep_app.route('/ceps', methods=['POST'])
 def new_cep():
     data = request.get_json()
-
     retu = CepServices.new(data)
-
     names = [item.to_dictionary() for item in retu]
 
     return jsonify(names)

@@ -2,44 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e9f6976-0db3-40b0-9c9e-5188ceba15d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/AC09-FakeNameGenerator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/person.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/person_dao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/person_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/person_services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Startup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/.idea/AC09.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/App/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/App/cep.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/App/document.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/App/names.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/Models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/Models/cep_dao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/Models/cep_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/Models/document_dao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/Models/document_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/Models/names_dao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/Models/names_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/Services/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/Services/cep_services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/Services/document_services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/Services/names_services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/Startup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AC09/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AC06/SalaDeAulaApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AC06/SalaDeAulaApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AC06/SalaDeAulaApi/Cliente/Startup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AC06/SalaDeAulaApi/Cliente/Startup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AC06/SalaDeAulaApi/Models/aluno/dataAccess/alunos_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AC06/SalaDeAulaApi/Models/aluno/dataAccess/alunos_dao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AC06/SalaDeAulaApi/startup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AC06/SalaDeAulaApi/startup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/api_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AC06/SalaDeAulaApi/Services/alunos/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AC06/SalaDeAulaApi/Services/alunos/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/person.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DATABASE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AC09/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AC09/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AC09/App/cep.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AC09/App/cep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AC09/DATABASE" beforeDir="false" afterPath="$PROJECT_DIR$/../AC09/DATABASE" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,12 +21,12 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Startup.py">
+        <entry file="file://$PROJECT_DIR$/Services/api_services.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="544">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,10 +35,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Services/person_services.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="20" column="58" lean-forward="true" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+            <state relative-caret-position="256">
+              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
               <folding>
-                <element signature="e#0#42#0" expanded="true" />
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Startup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,39 +59,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/person.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            <state relative-caret-position="82">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="30" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Models/person_dao.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Models/person_model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="61" column="13" lean-forward="true" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,13 +89,14 @@
         <option value="$PROJECT_DIR$/Models/person_model.py" />
         <option value="$PROJECT_DIR$/Services/person_services.py" />
         <option value="$PROJECT_DIR$/Models/person_dao.py" />
+        <option value="$PROJECT_DIR$/Services/api_services.py" />
         <option value="$PROJECT_DIR$/App/person.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="17" />
-    <option name="y" value="38" />
+    <option name="y" value="45" />
     <option name="width" value="1330" />
     <option name="height" value="693" />
   </component>
@@ -217,25 +172,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558400543872</updated>
-      <workItem from="1558400544948" duration="5100000" />
+      <workItem from="1558400544948" duration="16330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5100000" />
+    <option name="totallyTimeSpent" value="16330000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="17" y="38" width="1330" height="693" extended-state="0" />
+    <frame x="17" y="45" width="1330" height="693" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960998" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22932917" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32881355" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.39322034" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -261,16 +216,6 @@
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Startup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Models/person_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -281,30 +226,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Services/person_services.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="20" column="58" lean-forward="true" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Models/person_dao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        <state relative-caret-position="168">
+          <caret line="40" column="127" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="127" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/lib/python3.7/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3435">
+          <caret line="347" selection-start-line="347" selection-end-line="347" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Services/person_services.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Startup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Services/api_services.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/App/person.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        <state relative-caret-position="82">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="30" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
