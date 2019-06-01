@@ -17,7 +17,6 @@ def listar():
     return jsonify(response)
 
 
-# GET:: /msg/<int>?segredo=<str>&inicio=<int>&fim=<int>
 @mensagens_app.route('/msg/<int:id>', methods=['GET'])
 def listar_mensagens(id: int):
     segredo = request.args.get('segredo')
@@ -34,7 +33,7 @@ def listar_mensagens(id: int):
 
     ml = MyList(MensagemServices.list_all())
     ml = ml.where(lambda item: item.id_destinatario == id) \
-           .map(# Transforma a lista de objetos em uma lista de dicionarios
+           .map(  # Transforma a lista de objetos em uma lista de dicionarios
                 lambda item: {
                     "de": item.id_remetente,
                     "para": item.id_destinatario,

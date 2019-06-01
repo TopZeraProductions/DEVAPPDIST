@@ -1,7 +1,7 @@
 import requests
 import json
 
-host = "http://localhost:5080/"
+host = "http://localhost:5000/"
 
 
 def main():
@@ -38,11 +38,22 @@ def cadastrar_usuario():
     response = requests.post(url=host+"usr",
                              data=data,
                              headers={'Content-type': 'application/json', 'Accept': 'text/plain'})
-    print(response.content)
+
+    retorno_api = str(response.content)
+
+    print(type(retorno_api))
+
+    if retorno_api is dict:
+        print("Seu novo ID:" + retorno_api["nome"] + " sua nova KEY: " + retorno_api["segredo"])
+    else:
+        print(retorno_api)
 
 
 def listar_mensagem():
-    r = requests.get(host+"msg")
+    usuario = input("Digite seu ID")
+    segredo = input("Digite seu segredo")
+
+    r = requests.get(host+"msg/"+usuario+"?segredo="+segredo)
     print(r.content)
 
 
